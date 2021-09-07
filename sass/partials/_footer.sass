@@ -1,0 +1,95 @@
+%links
+    display: inline-block
+    text-decoration: none
+
+.info
+    @extend  %links
+    font-size: 15px
+    color: #fff
+    text-decoration: none  
+    max-width: 100%
+    margin-left: auto
+    text-align: right
+.footer
+    background: #245963
+    padding-top: 24px
+    padding-bottom: 50px
+
+    &__top
+        vertical-align: top
+        max-width: 100%
+        margin: 0 auto
+        +sm
+            & 
+                max-width: 500px 
+
+    &__mail
+        padding: 23px 1px 1px 64px
+
+    &__phone
+        padding: 23px 1px 1px 64px
+        +sm 
+            &
+                padding-left: 22px
+
+    &__smedia
+        padding: 0 1px 1px 50px
+        +sm 
+            &
+                padding-left: 82px
+
+    .social-media
+        vertical-align: top
+        &__list
+            list-style: none
+        &__item
+            display: inline-block
+            margin-right: 6px
+        &__link   
+            @extend  %links
+            background: #fff
+            width: 35px
+            height: 35px
+            border-radius: 50%
+            position: relative
+            &::after
+                content: ""
+                position: absolute
+                top: 10px
+                left: 13px       
+        
+    &__border
+        position: relative
+
+    &__border::after
+        position: absolute   
+        width:284px
+        height: 1px
+        background: #387d89
+        top: 61px
+        left: -320px
+        +sm 
+            &
+                content: ""
+                
+    .ic-fb::after
+        background: url(../images/ic-bottoms.png) 0 0 no-repeat
+        width: 8px
+        height: 14px
+    
+    .ic-tw::after
+        background: url(../images/ic-bottoms.png) -12px -2px no-repeat
+        width: 14px
+        height: 11px
+    
+    &__bottom
+        margin-top: 47px
+        text-align: center
+
+
+.web-info
+    font-size: 16px
+    color: #fff
+
+    &__text
+        color: #fdbd1f

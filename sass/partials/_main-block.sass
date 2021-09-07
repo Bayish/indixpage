@@ -1,0 +1,283 @@
+.main-block 
+    background: $mainBg
+
+%title
+    color: #fff
+    font-size: 23px
+    font-family: $addFront
+    font-weight:400
+    text-transform: uppercase
+    +sm 
+        &
+            font-size: 29px
+            
+
+.title-block
+    &__link
+        @extend %title
+        text-decoration: none
+        margin-bottom: 10px
+
+    
+    &__title 
+        position: relative
+        margin-bottom: 2px
+    
+    &__title::before 
+        content: ""
+        width: 100px
+        height: 100px
+        border-radius: 50%
+        background: #fff
+        position: absolute
+        top: -132px
+        left: 50%
+        transform: translateX(-50%)
+        +sm
+            &
+                top: -125px
+                
+
+.content-top 
+    position: relative
+    z-index: 9
+    top: 0
+    left: 0
+    display: flex
+    flex-wrap: wrap
+    margin-top: -80px
+
+    &__col
+        text-align: center
+        padding: 132px 0 39px
+        +md 
+            &
+                padding: 163px 0 39px
+
+    &__text
+        color: #fff
+        margin-top: 10px
+        font-size: 16px
+        padding: 0 15px 0
+        +md 
+            &
+                padding: 0 81px 0
+            
+
+    &__red
+        background: $bgRed
+    
+    &__yellow
+        background: $bgYellow
+    
+    &__bluelight
+        background: $bgBluelight
+    
+    &__pink
+        background: $bgPink
+    
+    
+    $icons: mail, pen, crown, man
+
+    @each $name in $icons 
+        .ic-#{$name}::after 
+            content: ""
+            position: absolute
+            top: -106px
+            left: 50%
+            transform: translateX(-50%)
+            background: url(../images/ic-#{$name}.png) center no-repeat
+            width: 56px
+            height: 53px
+            +sm 
+                &
+                    top: -100px
+                    
+                    
+        
+    
+.content-bottom
+    padding-top: 58px
+    text-align: center
+    margin: 0 -15px
+    background: $mainBg
+
+    &__title
+        @extend %title
+        margin:20px 0 13px
+            
+    &__subtitle  
+        @extend %title
+        margin-bottom: 12px
+        margin-top: 5px
+        font-size: 21px
+        margin-bottom: 65px
+    
+    &__col
+        padding: 0 15px
+        display: flex
+        justify-content: space-between
+        
+
+.card
+    height: 100% 
+    display: flex
+    flex-direction: column 
+    align-items: flex-start     
+    &__link-img
+        display: block
+        width: 180px
+        height: 180px
+        margin: 0 auto
+        img
+            display: inline-block
+            width: 100%
+            height: 100%
+            border-radius: 50%
+
+    &__info
+        color: #76b2be
+        line-height: 26px
+        padding: 15px 26px 16px
+
+    &__button
+        text-decoration: none
+        color: #fff
+        font-size: 15px
+        text-transform: uppercase
+        padding: 10px 20px 10px 18px
+        position: relative
+        margin: auto auto 0
+        font-family: $addFront
+
+
+    &__button::after
+        content: ""
+        position: absolute
+        bottom: -11px
+        left: 39%
+        width: 0
+        height: 0
+        border-style: solid
+        border-width: 12px 11px 0 12px
+        border-color: #007bff transparent transparent transparent
+
+    
+%title-colors
+    padding: 45px 0 60px
+    border-top: 8px solid #fff
+.card_red
+    background: #245963
+    @extend %title-colors
+    border-color: #e84c3d 
+    .card__button
+        background: #e84c3d 
+        &::after
+            border-color: #e84c3d transparent transparent transparent
+
+.card_yellow
+    background: #245963
+    @extend %title-colors
+    border-color: #fdbd1f
+    .card__button
+        background: #fdbd1f 
+        &::after
+            border-color: #fdbd1f transparent transparent transparent
+
+.card_bluelight
+    background: #245963
+    @extend %title-colors
+    border-color: #1bbc9b
+    .card__button
+        background: #1bbc9b
+        &::after
+            border-color: #1bbc9b transparent transparent transparent
+
+.connect-block
+    padding-top: 188px
+    padding-bottom: 91px
+    max-width: 570px
+    margin: 0 auto
+    text-align: center
+    
+    &__subtitle
+        @extend %title
+        font-size: 21px
+        margin-top: 12px
+        margin-bottom: 38px
+
+    &__ic::before
+        top: -132px
+        left: 50%
+        transform: translateX(-50%)
+        +sm
+            &
+                top: -128px
+       
+
+
+
+    &__ic::after 
+        content: ""
+        position: absolute
+        background: url(../images/mail-bottom.png) center no-repeat
+        top: -108px
+        left: 50%
+        transform: translateX(-50%)
+        width: 56px
+        height: 53px
+        +sm
+            &
+                top: -106px
+                
+
+.form-block   
+    &__top 
+        margin: 30px -15px
+
+    &__nametext, 
+    &__phonenumber,
+    &__message
+        display: block
+        width: 100%
+        background: #245963
+        border: #387d89 solid 1px
+        outline: none
+        padding: 13px 0
+        resize: none
+        margin-top: 10px
+        +md 
+            & 
+                margin-top: 0
+
+    &__message
+        min-height: 125px
+        margin-bottom: 30px
+
+    &__nametext, 
+    &__phonenumber,
+    &__message
+        +placeholder
+            padding: 0 15px 0 17px
+            color: #76b2be
+
+    &__button
+        text-transform: uppercase
+        color: #fff
+        padding: 10px 25px
+        font-size: 15px
+        background: #245963
+        outline: none
+        border: none
+        position: relative
+    
+    &__button::after
+        content: ""
+        position: absolute
+        bottom: -12px
+        left: 34%
+        width: 0
+        height: 0
+        border-style: solid
+        border-width: 12px 11px 0 12px
+        border-color: #245963 transparent transparent transparent
